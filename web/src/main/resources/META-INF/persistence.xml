@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="foodtruckPersistence"
+		transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/H2DS</jta-data-source>
+
+		<properties>
+			<!-- Properties for Hibernate *************************** IBM DB2 HIBERNATE 
+				DIALECT *********************************** <property name="hibernate.dialect">org.hibernate.dialect.DB2Dialect</property> 
+				*************************** POSTGRESQL HIBERNATE DIALECT ***************************** 
+				<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" 
+				/> *************************** ORACLE 10G e 11G HIBERNATE DIALECT *********************** 
+				<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" 
+				/> ************************************************************************************** 
+				<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" 
+				/> -->
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" 
+				/> -->
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.archive.autodetecion" value="class, hbm" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+ -->
+ 			
+         <!-- Properties for Hibernate -->
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+        	<property name="hibernate.archive.autodetecion" value="class, hbm" />
+        	 <property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.id.new_generator_mappings" value="true" />			
+			<property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
+         <!-- ATENÇÃO - SE A VARIÁVEL ABAIXO ESTIVER SETADA COMO TRUE, O INTERCEPTOR 
+				JPA NÃO FUNCIONARÁ -->
+			<property name="hibernate.enable_lazy_load_no_trans" value="false" />
+
+		</properties>
+	</persistence-unit>
+</persistence>

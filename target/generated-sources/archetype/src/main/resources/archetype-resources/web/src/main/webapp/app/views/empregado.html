@@ -1,0 +1,106 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div class="content-wrapper">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<span class="text-primary bold theme-main-h4 left">Recursos de
+				empregados</span>
+		</div>
+		<div class="panel-body">
+			<form id="empregadoForm" name="empregadoForm" class="form-inline">
+
+				<div class="row">
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input type="text" class="form-control" id="id"
+								data-ng-required="true"
+								data-ng-pattern="[0-9][0-9][0-9][0-9][0-9][0-9]"
+								autofocus="autofocus" data-ng-model="epg.empregado.id"
+								placeholder="ID do empregado">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<span>Method: GET <a href="${symbol_pound}" data-ng-click="epg.listAll()">/rest/empregado</a></span>
+					</div>
+				</div>
+
+				<div class="row" data-ng-hide="!epg.empregado.id">
+					<div class="form-group">
+						<span>Method: GET <a href="${symbol_pound}"
+							data-ng-disabled="empregadoForm.${symbol_dollar}invalid"
+							data-ng-click="epg.findById()">/rest/empregado/{{epg.empregado.id}}</a></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<span>Method: DELETE <a href="${symbol_pound}"
+							data-ng-disabled="empregadoForm.${symbol_dollar}invalid"
+							data-ng-click="epg.remove()">/rest/empregado/{{epg.empregado.id}}</a></span>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+	<br />
+	<div class="panel panel-default"
+		data-ng-hide="epg.empregados.length == 0">
+
+		<div class="panel-heading">
+			<span class="text-primary bold theme-main-h4 left">Resultado</span>
+		</div>
+
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table data-st-table="epg.lista" data-st-safe-src="epg.empregados"
+					class="table table-hover table-bordered table-striped table-condensed">
+					<thead>
+						<tr>
+							<th class="text-left" data-st-sort="nome">Nome</th>
+							<th class="text-left" data-st-sort="dtnasc">Data de
+								Nascimento</th>
+							<th class="text-left" data-st-sort="sexo">Sexo</th>
+							<th class="text-center">Ações</th>
+						</tr>
+						<tr>
+							<th colspan="4"><input data-st-search
+								placeholder="Pesquisar..." class="input-sm form-control"
+								type="search" /></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="empregado in epg.lista track by ${symbol_dollar}index">
+							<td>{{empregado.nome}}</td>
+							<td>{{empregado.dtnasc | date: 'shortDate'}}</td>
+							<td>{{empregado.sexo == 'M' ? 'Masculino' : 'Feminino'}}</td>
+							<td class="text-center"><a href=""
+								data-ng-click="epg.edit(empregado)"> <span
+									class="fa fa-pencil fa-fw"></span></a> <a href=""
+								data-ng-click="pes.remove(empregado)"> <span
+									class="fa fa-trash fa-fw"></span></a></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5" class="text-center">
+								<div data-st-pagination=""
+									data-st-items-by-page="epg.itemsByPage"
+									data-st-displayed-pages="10"></div> <!-- <div data-st-items-by-page="10" data-st-pagination=""
+									data-st-template="app/views/templates/pagination.template.html"></div> -->
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>

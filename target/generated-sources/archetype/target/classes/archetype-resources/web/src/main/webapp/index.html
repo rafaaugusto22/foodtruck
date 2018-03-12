@@ -1,0 +1,67 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<html lang="pt-br" data-ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>foodtruck - Sistema de Arquitetura de Negócios Digitais</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="assets/img/favicon.ico" />
+<!-- Bootstrap -->
+<link type="text/css" rel="stylesheet"
+	href="assets/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+	href="assets/css/bootstrap-theme.min.css">
+<!-- Font Awesome -->
+<link type="text/css" rel="stylesheet"
+	href="assets/css/font-awesome.min.css">
+<!-- Toastr -->
+<link type="text/css" rel="stylesheet" href="assets/css/toastr.min.css">
+<!-- Project -->
+<link type="text/css" rel="stylesheet" href="assets/css/app.css">
+<base href="/${parentArtifactId}-web/">
+</head>
+<body ng-controller="LoginController">
+
+
+    <div class="wrapper">
+		<div class="slide-animate" data-ui-view="header-container"></div>
+		<div data-ui-view="page-container" class="dataview"></div>
+		<div class="slide-animate" data-ui-view="footer-container"></div>
+	</div>
+	
+	
+	<!-- Vendor scripts -->
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/angular.js"></script>
+	<script src="assets/js/angular-ui-router.min.js"></script>
+	<script src="assets/js/angular-resource.min.js"></script>
+	<script src="assets/js/angular-base64.min.js"></script>
+	<script src="assets/js/angular-animate.min.js"></script>
+	<script src="assets/js/toastr.min.js"></script>
+	<script src="assets/js/angular-jwt.min.js"></script>
+	<script src="assets/js/smart-table.min.js"></script>	
+
+	<!-- Project scripts -->
+	<script src="app/modules.js"></script>
+	<script src="app/interceptors.js"></script>
+	<script src="app/routes.js"></script>
+
+	<!-- Application scripts -->
+	<script src="app/factories/notification.factory.js"></script>
+
+	<script src="app/services/session.service.js"></script>
+	<script src="app/services/login.service.js"></script>
+	<script src="app/services/empregado.service.js"></script>
+
+	<script src="app/controllers/header.controller.js"></script>
+	<script src="app/controllers/login.controller.js"></script>
+	<script src="app/controllers/empregado.controller.js"></script>
+
+</body>
+
+</html>

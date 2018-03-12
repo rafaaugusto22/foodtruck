@@ -1,0 +1,55 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="${symbol_pound}bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand" href="index.html" id="logo_caixa"><img
+					alt="Brand" src="assets/img/caixa.png"></a>
+
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a data-ui-sref-active="active" data-ui-sref="home.empregado" class="text-center">Empregados</a></li>
+					<li><a href="${symbol_pound}/portal" class="text-center">Portal</a></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Demais Opções <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="${symbol_pound}/clientes">Clientes</a></li>
+							<li><a href="${symbol_pound}">Cartão de Crédito</a></li>
+							<li><a href="${symbol_pound}">Saúde Caixa</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="${symbol_pound}">Recursos Humanos</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="${symbol_pound}">Suporte Tecnológico</a></li>
+						</ul></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false"><span
+							class="glyphicon glyphicon-user" aria-hidden="true"></span> <span
+							class="caret"></span> </a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a>Perfil</a></li>
+							<li class="divider"></li>
+							<li><a data-ng-click="hea.logout()">Sair</a></li>
+						</ul></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+</div>
