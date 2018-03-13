@@ -28,7 +28,7 @@ import javax.sql.DataSource;
 @WebListener
 public class CreateDatabase implements javax.servlet.ServletContextListener {
 
-	@Resource(mappedName = "java:jboss/H2DS")
+	@Resource(mappedName = "java:jboss/datasources/ExampleDS")
 	private DataSource ds;
 
 	private static final Logger log = Logger.getLogger(CreateDatabase.class.getName());
